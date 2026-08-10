@@ -3,9 +3,5 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  base: '/',
-  build: {
-    outDir: 'dist',
-    copyPublicDir: true,
-  },
+  base: '/grace-chang.github.io/',
 })
