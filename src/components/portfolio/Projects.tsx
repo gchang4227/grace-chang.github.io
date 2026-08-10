@@ -1,67 +1,106 @@
-const projects = [
-  {
-    eyebrow: "Internal Tooling",
-    title: "DPC Total Cost of Ownership Tool",
-    body: "A full-stack TCO engine with a multi-step input wizard, real-time ROI calculation, data-provenance tooltips, and a presentation engine that generates client-facing sales decks.",
-    stack: ["React", "Python", "Docker", "SQLite"],
-  },
-  {
-    eyebrow: "MVP · Sole Stakeholder",
-    title: "Patent Assignment Tool",
-    body: "Elicited raw pain points and rapidly shipped functional front-end prototypes with mock data, architecting the end-to-end system while directing two interns on backend integrations for reviewer assignments and theme summaries.",
-    stack: ["React", "Python", "Mock APIs"],
-  },
-  {
-    eyebrow: "Open Source · Omnia",
-    title: "Dual-Level Config Validation",
-    body: "Python jsonschema plus Ansible checks that instantly catch value conflicts and overlapping IP ranges across 15 critical configuration files, eliminating multi-hour bare-metal install failures.",
-    stack: ["Python", "Ansible", "Linux"],
-  },
-  {
-    eyebrow: "Hackathon Winner",
-    title: "PPDM 3D",
-    body: "A unified UI carousel letting developers maintain and search across multiple PowerProtect Data Manager instances, with an AI chatbot layered on top. Built with three teammates.",
-    stack: ["Angular", "TypeScript", "AI Chat"],
-  },
-];
+import leatherTexture from "@/assets/leather-texture.jpg";
 
 export function Projects() {
   return (
-    <section id="projects" className="px-6 py-20">
+    <section id="work" className="px-6 py-20">
       <div className="mx-auto max-w-6xl">
-        <div className="mb-12">
-          <h2 className="mb-4 text-sm font-medium tracking-widest text-muted-foreground uppercase">
-            Selected Work
-          </h2>
-          <h3 className="font-display max-w-[28ch] text-3xl text-balance md:text-4xl">
-            Things I designed, shipped, and maintained.
-          </h3>
+        <div className="mb-12 flex flex-col justify-between gap-4 md:flex-row md:items-end">
+          <div>
+            <h2 className="mb-4 text-sm font-medium tracking-widest text-muted-foreground uppercase">
+              The Work
+            </h2>
+            <h3 className="font-display max-w-[26ch] text-3xl text-balance md:text-4xl">
+              Grouped by what the work actually was.
+            </h3>
+          </div>
+          <p className="max-w-[32ch] text-sm text-pretty text-foreground/70">
+            Frontend, backend, infrastructure, and full-stack — the same engineer, four different
+            problem domains.
+          </p>
         </div>
 
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-          {projects.map((project) => (
-            <article
-              key={project.title}
-              className="bento-card flex flex-col justify-between p-8 transition-transform hover:-translate-y-1"
-            >
-              <div>
-                <div className="mb-4 text-[10px] font-semibold tracking-tighter text-foreground/40 uppercase italic">
-                  {project.eyebrow}
-                </div>
-                <h4 className="font-display mb-3 text-2xl">{project.title}</h4>
-                <p className="max-w-[46ch] text-sm leading-relaxed text-pretty text-foreground/70">
-                  {project.body}
-                </p>
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-12">
+          {/* Full-stack — feature card */}
+          <div className="bento-card flex flex-col justify-between p-8 md:col-span-8">
+            <div>
+              <div className="mb-4 text-[10px] font-semibold tracking-tighter text-foreground/40 uppercase italic">
+                Full-stack &amp; Leadership
               </div>
-              <div className="mt-8 flex flex-wrap gap-2">
-                {project.stack.map((tech) => (
-                  <span key={tech} className="chip">
-                    {tech}
-                  </span>
-                ))}
+              <h4 className="font-display mb-3 text-2xl">DPC TCO Tool &amp; Patent Assignment</h4>
+              <p className="max-w-[52ch] text-sm leading-relaxed text-pretty text-foreground/70">
+                Shipped a containerized Total Cost of Ownership platform with two PdMs — multi-step
+                wizard, real-time ROI engine, Okta SSO, RBAC — then prototyped a patent-assignment
+                MVP as sole stakeholder while mentoring four interns.
+              </p>
+            </div>
+            <div className="mt-8 flex flex-wrap gap-2">
+              <span className="chip">React</span>
+              <span className="chip">Python</span>
+              <span className="chip">Docker</span>
+              <span className="chip">SQLite</span>
+              <span className="chip">Okta OIDC</span>
+            </div>
+          </div>
+
+          {/* Infrastructure */}
+          <div className="relative flex flex-col justify-between overflow-hidden rounded-[24px] bg-accent/20 p-8 ring-1 ring-border md:col-span-4">
+            <div>
+              <div className="mb-4 text-[10px] font-semibold tracking-tighter text-foreground/40 uppercase italic">
+                Infrastructure
               </div>
-            </article>
-          ))}
+              <h4 className="font-display mb-3 text-2xl">AI Storage Control Plane</h4>
+              <p className="text-sm leading-relaxed text-pretty text-foreground/80">
+                Serviceability API for node and bundle state, label-driven node add/remove, and
+                Kubernetes CRD isolation on Canonical K8s.
+              </p>
+            </div>
+            <img
+              src={leatherTexture}
+              alt="Woven espresso leather texture representing layered infrastructure"
+              loading="lazy"
+              width={816}
+              height={816}
+              className="mt-8 aspect-[4/3] w-full rounded-xl object-cover ring-1 ring-border"
+            />
+          </div>
+
+          {/* Backend */}
+          <div className="bento-card flex flex-col justify-between p-8 md:col-span-6">
+            <div>
+              <div className="mb-4 text-[10px] font-semibold tracking-tighter text-foreground/40 uppercase italic">
+                Backend &amp; Open Source
+              </div>
+              <h4 className="font-display mb-3 text-2xl">Omnia Config Validation</h4>
+              <p className="max-w-[46ch] text-sm leading-relaxed text-pretty text-foreground/70">
+                Dual-level jsonschema and Ansible validation across 15 config files, catching IP
+                overlaps before they became multi-hour bare-metal install failures.
+              </p>
+            </div>
+            <div className="mt-8 flex flex-wrap gap-2">
+              <span className="chip">Python</span>
+              <span className="chip">Ansible</span>
+              <span className="chip">Linux</span>
+            </div>
+          </div>
+
+          {/* Frontend */}
+          <div className="bento-card flex flex-col justify-between p-8 md:col-span-6">
+            <div>
+              <div className="mb-4 text-[10px] font-semibold tracking-tighter text-foreground/40 uppercase italic">
+                Frontend
+              </div>
+              <h4 className="font-display mb-3 text-2xl">PowerProtect Data Manager</h4>
+              <p className="max-w-[46ch] text-sm leading-relaxed text-pretty text-foreground/70">
+                UI features and end-to-end tests for a multicloud data protection platform. Won the
+                internal UI hackathon with PPDM 3D — a unified instance carousel with an AI chatbot.
+              </p>
+            </div>
+            <div className="mt-8 flex flex-wrap gap-2">
+              <span className="chip">Angular</span>
+              <span className="chip">TypeScript</span>
+              <span className="chip">Cypress</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
