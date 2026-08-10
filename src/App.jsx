@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import PetalBackground from './PetalBackground'
 import './App.css'
 
 function App() {
@@ -69,6 +70,7 @@ function App() {
 
   return (
     <div className="app">
+      <PetalBackground />
       <nav>
         <div className="nav-content">
           <span className="nav-brand">Portfolio © 2026</span>
@@ -141,7 +143,7 @@ function App() {
       <section id="about" className="about">
         <div className="about-content">
           <div className="about-image">
-            <img src="/assets/portrait.jpg" alt="Portrait of the engineer working at a desk in warm natural light" loading="lazy" />
+            <img src="/portrait.jpg" alt="Portrait of the engineer working at a desk in warm natural light" loading="lazy" />
           </div>
           <div className="about-text">
             <h2>Adaptable by design.</h2>

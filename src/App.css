@@ -5,9 +5,32 @@
   border-color: rgba(51, 33, 19, 0.1);
 }
 
+/* Petal Background */
+.petal-background {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+  background: var(--beige);
+}
+
+.app {
+  position: relative;
+  z-index: 1;
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .petal-background {
+    display: none;
+  }
+}
+
 :root {
   /* Original design colors - matching Lovable exactly */
-  --cream: #faf6ee;
+  --cream: #F8F5EC;
   --beige: #E8DDD4;
   --blush: #cba2a1;
   --espresso: #332113;
@@ -25,7 +48,7 @@
 
 body {
   font-family: 'Instrument Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-  background-color: #faf6ee;
+  background-color: var(--cream);
   color: var(--espresso);
   line-height: 1.6;
   min-height: 100vh;
@@ -45,10 +68,10 @@ body {
 nav {
   position: sticky;
   top: 0;
-  z-index: 50;
+  z-index: 100;
   width: 100%;
   border-bottom: 1px solid var(--border);
-  background-color: rgba(250, 246, 238, 0.8);
+  background-color: rgba(250, 246, 238, 0.85);
   backdrop-filter: blur(12px);
 }
 
@@ -89,7 +112,6 @@ nav {
   padding: 6rem 1.5rem;
   max-width: 72rem;
   margin: 0 auto;
-  background-color: #faf6ee;
 }
 
 .hero-content {
@@ -186,7 +208,6 @@ nav {
   padding: 5rem 1.5rem;
   max-width: 64rem;
   margin: 0 auto;
-  background-color: #faf6ee;
 }
 
 .section-header {
@@ -281,8 +302,8 @@ nav {
 }
 
 .timeline-org {
-  font-size: 0.75rem;
-  color: rgba(51, 33, 19, 0.6);
+  font-size: 0.875rem;
+  color: var(--espresso);
   font-family: 'Instrument Sans', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
@@ -299,8 +320,8 @@ nav {
 }
 
 .timeline-period {
-  font-size: 0.75rem;
-  color: var(--muted-foreground);
+  font-size: 0.875rem;
+  color: var(--espresso);
   white-space: nowrap;
   font-family: 'Instrument Sans', -apple-system, BlinkMacSystemFont, sans-serif;
 }
@@ -332,10 +353,10 @@ nav {
 }
 
 .timeline-role {
-  font-size: 0.625rem;
+  font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: -0.025em;
-  color: rgba(51, 33, 19, 0.4);
+  color: var(--espresso);
   text-transform: uppercase;
   font-style: italic;
 }
@@ -343,9 +364,9 @@ nav {
 .timeline-summary {
   margin-top: 0.5rem;
   max-width: 58ch;
-  font-size: 0.875rem;
+  font-size: 1rem;
   line-height: 1.75;
-  color: rgba(51, 33, 19, 0.75);
+  color: var(--espresso);
   text-wrap: pretty;
 }
 
@@ -475,7 +496,6 @@ nav {
 
 /* Contact Section */
 .contact {
-  background-color: #faf6ee;
   padding: 5rem 1.5rem;
 }
 
