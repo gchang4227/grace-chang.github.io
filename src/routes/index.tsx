@@ -3,7 +3,6 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Nav } from "@/components/portfolio/Nav";
 import { Hero } from "@/components/portfolio/Hero";
 import { Experience } from "@/components/portfolio/Experience";
-import { Projects } from "@/components/portfolio/Projects";
 import { About } from "@/components/portfolio/About";
 import { Contact } from "@/components/portfolio/Contact";
 
