@@ -64,7 +64,11 @@ function App() {
     e.preventDefault()
     const element = document.getElementById(sectionId)
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      element.scrollIntoView({ 
+        behavior: 'smooth', 
+        block: 'start',
+        inline: 'nearest'
+      })
     }
   }
 
@@ -73,7 +77,7 @@ function App() {
       <PetalBackground />
       <nav>
         <div className="nav-content">
-          <span className="nav-brand">Portfolio © 2026</span>
+          <span className="nav-brand">Grace Chang</span>
           <div className="nav-links">
             <a href="#experience" onClick={(e) => scrollToSection(e, 'experience')}>Timeline</a>
             <a href="#about" onClick={(e) => scrollToSection(e, 'about')}>About</a>
@@ -181,7 +185,7 @@ function App() {
         </div>
         <div className="footer-bottom">
           <span>Built with craftsmanship & intent</span>
-          <span>Austin, Texas</span>
+          <span>Boston, Massachusetts</span>
         </div>
       </footer>
     </div>
